@@ -1,11 +1,12 @@
 {
-  "name": "vue-packages",
+  "name": "vue-modular",
   "version": "0.1.0",
-  "private": true,
+  "main": "dist/vue-modular.umd.js",
+  "module": "lib/index.js",
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint",
+    "serve": "vue-cli-service serve example/main.js",
+    "build": "vue-cli-service build --target lib lib/index.js",
+    "lint": "vue-cli-service lint tests lib example",
     "test:unit": "vue-cli-service test:unit"
   },
   "dependencies": {
@@ -44,6 +45,13 @@
       "parser": "babel-eslint"
     }
   },
+  "eslintIgnore": [
+    "tests/coverage"
+  ],
+  "prettier": {
+    "singleQuote": true,
+    "semi": false
+  },
   "postcss": {
     "plugins": {
       "autoprefixer": {}
@@ -78,6 +86,11 @@
     "testMatch": [
       "**/tests/unit/**/*.spec.(js|jsx|ts|tsx)|**/__tests__/*.(js|jsx|ts|tsx)"
     ],
-    "testURL": "http://localhost/"
+    "testURL": "http://localhost/",
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "lib/**/*.{js,jsx}"
+    ],
+    "coverageDirectory": "tests/coverage"
   }
 }
