@@ -9,11 +9,7 @@ describe('Vue router', () => {
   beforeEach(() => {
     const localVue = createLocalVue()
     localVue.use(Router)
-    router = new Router({
-      mode: 'abstract',
-      base: process.env.BASE_URL,
-      routes: []
-    })
+    router = new Router()
     modules = {
       moduleA: {
         router: {

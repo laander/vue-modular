@@ -9,7 +9,7 @@ describe('Vuex store', () => {
   beforeEach(() => {
     const localVue = createLocalVue()
     localVue.use(Vuex)
-    store = new Vuex.Store({})
+    store = new Vuex.Store()
     modules = {
       moduleA: {
         store: {
