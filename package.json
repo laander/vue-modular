@@ -1,6 +1,6 @@
 {
   "name": "vue-modular",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "main": "dist/vue-modular.umd.js",
   "module": "lib/index.js",
   "scripts": {
