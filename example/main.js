@@ -3,13 +3,15 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 
-import packageLoader from '../lib'
+import VueModular from '../lib'
 import auth from './modules/auth'
 import todos from './modules/todos'
 
-Vue.use(packageLoader, {
-  modules: { auth, todos },
-  // modules: () => require.context('./packages/', true, /\/index\.js$/),
+Vue.use(VueModular, {
+  modules: {
+    auth,
+    todos
+  },
   store,
   router
 })
