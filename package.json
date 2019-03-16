@@ -7,8 +7,7 @@
     "serve": "vue-cli-service serve example/main.js",
     "build": "vue-cli-service build --target lib lib/index.js",
     "lint": "vue-cli-service lint tests lib example",
-    "test:unit": "vue-cli-service test:unit",
-    "publish-to-npm": "yarn lint && yarn build && yarn publish"
+    "test": "vue-cli-service test:unit"
   },
   "dependencies": {
     "vue": "^2.6.6",
