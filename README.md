@@ -3,6 +3,7 @@
 > Helps you implement a folder-by-feature module structure in large Vue projects 👷‍👷‍
 
 ![CircleCI](https://img.shields.io/circleci/project/github/laander/vue-modular/master.svg)
+![Codecov](https://img.shields.io/codecov/c/github/laander/vue-modular.svg)
 ![npm](https://img.shields.io/npm/v/vue-modular.svg)
 
 ## Building large Vue projects
