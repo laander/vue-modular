@@ -228,4 +228,4 @@ PRs and issues are welcome!
 
 [MIT](http://opensource.org/licenses/MIT)
 
-Use it, fork it, change it, do what you want.
+Use it, fork it, change it, do what you want 🖖
