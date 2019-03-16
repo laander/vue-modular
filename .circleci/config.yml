@@ -1,4 +1,6 @@
 version: 2
+orbs:
+  codecov: codecov/codecov@1.0.4
 jobs:
   build:
     docker:
@@ -18,3 +20,5 @@ jobs:
       - run: yarn test
       - run: yarn lint
       - run: yarn build
+      - codecov/upload:
+          token: 979c0457-ee6b-4988-b69a-825d6b050bd5
