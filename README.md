@@ -2,6 +2,9 @@
 
 > Helps you implement a folder-by-feature module structure in large Vue projects 👷‍👷‍
 
+![CircleCI](https://img.shields.io/circleci/project/github/laander/vue-modular/master.svg)
+![npm](https://img.shields.io/npm/v/vue-modular.svg)
+
 ## Building large Vue projects
 
 When Vue projects grow, the classic [folder-by-type](https://itnext.io/how-to-structure-a-vue-js-project-29e4ddc1aeeb) folder structure can become unmanageable because dependencies across files are hard to refactor and mentally compute.

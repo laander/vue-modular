@@ -3,6 +3,7 @@
   "version": "0.2.0",
   "main": "dist/vue-modular.umd.js",
   "module": "lib/index.js",
+  "license": "MIT",
   "scripts": {
     "serve": "vue-cli-service serve example/main.js",
     "build": "vue-cli-service build --target lib lib/index.js",
