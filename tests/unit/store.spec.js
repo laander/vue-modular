@@ -1,29 +1,28 @@
 import Vuex from 'vuex'
 import { createLocalVue } from '@vue/test-utils'
-import { registerStores } from '../../lib'
+import { registerModuleStore, reset } from '../../lib'
 
 describe('Vuex store', () => {
-  let modules
+  let module
   let store
 
   beforeEach(() => {
+    reset()
     const localVue = createLocalVue()
     localVue.use(Vuex)
     store = new Vuex.Store()
-    modules = {
-      moduleA: {
-        store: {
-          namespaced: true,
-          state: { foo: 'bar' },
-          mutations: {
-            updateFoo(state, value) {
-              state.foo = value
-            }
-          },
-          getters: {
-            getFoo(state) {
-              return state.foo
-            }
+    module = {
+      store: {
+        namespaced: true,
+        state: { foo: 'bar' },
+        mutations: {
+          updateFoo(state, value) {
+            state.foo = value
+          }
+        },
+        getters: {
+          getFoo(state) {
+            return state.foo
           }
         }
       }
@@ -31,15 +30,20 @@ describe('Vuex store', () => {
   })
 
   it('can register namespaced module getters', () => {
-    registerStores(modules, store)
+    registerModuleStore('moduleA', module, store)
     expect(store.getters['moduleA/getFoo']).toBeDefined()
   })
 
   it('can register and call namespaced module mutations', () => {
-    const spy = jest.spyOn(modules.moduleA.store.mutations, 'updateFoo')
-    registerStores(modules, store)
+    const spy = jest.spyOn(module.store.mutations, 'updateFoo')
+    registerModuleStore('moduleA', module, store)
     store.commit('moduleA/updateFoo', 'baz')
     expect(spy).toHaveBeenCalled()
     expect(store.state.moduleA.foo).toBe('baz')
+  })
+
+  it('cannot register module without store property', () => {
+    const result = registerModuleStore('moduleA', {}, store)
+    expect(result).toBe(false)
   })
 })

@@ -3,20 +3,22 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 
-import VueModular from '../lib'
+// import plugin and static modules to load
+import VueModular, { registerModules } from '../lib'
 import auth from './modules/auth'
-import todos from './modules/todos'
 
+// use the plugin and pass modules, vuex store and vue router
 Vue.use(VueModular, {
-  modules: {
-    auth,
-    todos
-  },
+  modules: { auth },
   store,
   router
 })
 
-Vue.config.productionTip = false
+// lazily import a module asynchronously and register it
+setTimeout(async () => {
+  const { default: todos } = await import('./modules/todos')
+  registerModules({ todos })
+}, 1000)
 
 new Vue({
   router,

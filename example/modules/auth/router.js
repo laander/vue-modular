@@ -10,7 +10,8 @@ export default {
     {
       path: '/logout',
       name: 'logout',
-      component: () => import(/* webpackChunkName: "logout" */ './Logout.vue')
+      // also works with dynamic imports for code splitting
+      component: () => import('./Logout.vue')
     }
   ]
 }

@@ -8,6 +8,7 @@ export default {
       component: Todos
     }
   ],
+  // router lifecycle hooks that can be used for navigation guards are supported as well
   beforeEach: (to, from, next) => {
     next()
   }

@@ -1,7 +1,7 @@
 <template>
   <div>
     <h2>Hello!</h2>
-    <p>Custom key from todos module:</p>
+    <p>Custom key from auth module:</p>
     <code>{{ todosCustom }}</code>
   </div>
 </template>
@@ -11,7 +11,8 @@ export default {
   name: 'home',
   computed: {
     todosCustom() {
-      return this.$modules.get('todos').custom
+      // access exported module data through the plugin's helper property
+      return this.$modules.auth.custom
     }
   }
 }

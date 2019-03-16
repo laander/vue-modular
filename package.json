@@ -1,13 +1,14 @@
 {
   "name": "vue-modular",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "main": "dist/vue-modular.umd.js",
   "module": "lib/index.js",
   "scripts": {
     "serve": "vue-cli-service serve example/main.js",
     "build": "vue-cli-service build --target lib lib/index.js",
     "lint": "vue-cli-service lint tests lib example",
-    "test:unit": "vue-cli-service test:unit"
+    "test:unit": "vue-cli-service test:unit",
+    "publish-to-npm": "yarn lint && yarn build && yarn publish"
   },
   "dependencies": {
     "vue": "^2.6.6",
